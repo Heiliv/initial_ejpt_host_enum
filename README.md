@@ -46,14 +46,17 @@ Ejemplo:
 Los resultados se guardan en:
 
 ```
-./resultados/
-   └── 10.10.10.2/
-       ├── nmap.txt
-       ├── ftp.txt
-       ├── smb.txt
-       ├── nikto.txt
-       ├── whatweb.txt
-       └── gobuster.txt
+resultados/
+├── tcp_scan.txt                      ← escaneo inicial rápido (todos los hosts)
+├── all_service_scan.txt             ← escaneo detallado de puertos abiertos
+└── 10.10.10.5/
+    ├── whatweb.txt                  ← fingerprinting web
+    ├── nikto.txt                    ← escaneo vulnerabilidades web
+    ├── gobuster.txt                 ← descubrimiento de directorios
+    ├── smb_enum.txt                 ← recursos SMB listados
+    ├── smb_public_*.txt             ← acceso a cada share (si es público)
+    ├── ftp_anonymous_listing.txt    ← intento de listado vía FTP anónimo (si exitoso)
+
 ```
 
 ---
